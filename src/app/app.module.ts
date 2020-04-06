@@ -1,12 +1,14 @@
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { AppComponent } from './app.component';
 import { 
   EntryListComponent,
   EntryComponent,
-  EntryService
+  EntryService,
+  EntryCommentFormComponent,
 } from './entries';
 import { InMemoryEntryService } from './backend';
 
@@ -14,6 +16,7 @@ import { InMemoryEntryService } from './backend';
   imports: [
     BrowserModule,
     HttpModule,
+    FormsModule,
     InMemoryWebApiModule.forRoot(InMemoryEntryService),
   ],
   providers: [
@@ -22,7 +25,8 @@ import { InMemoryEntryService } from './backend';
   declarations: [
     AppComponent,
     EntryComponent,
-    EntryListComponent
+    EntryListComponent,
+    EntryCommentFormComponent,
   ],
   bootstrap: [AppComponent]
 
