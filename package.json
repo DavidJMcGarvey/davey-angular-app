@@ -43,7 +43,7 @@
     "uglify-loader": "1.4.0",
     "webpack": "1.14.0",
     "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "1.16.2",
+    "webpack-dev-server": "3.1.11",
     "webpack-merge": "2.3.1"
   }
 }
