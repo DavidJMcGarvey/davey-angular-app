@@ -58,7 +58,7 @@ export class InMemoryEntryService implements InMemoryDbService {
                         id: 5,
                         name: 'Becky M',
                         comment: 'I imagine this was a shot of a storm that just passed.'
-                    }
+                    },
                 ]
             },
             {
