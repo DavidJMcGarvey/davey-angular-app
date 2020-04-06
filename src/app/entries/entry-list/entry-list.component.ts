@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 
+
 @Component({
   selector: 'app-entry-list',
   templateUrl: 'entry-list.component.html',
@@ -7,5 +8,7 @@ import { Component } from '@angular/core';
 })
 
 export class EntryListComponent {
-
+  constructor() {
+    
+  }
 }
