@@ -1,11 +1,24 @@
-<form (submit)="onSubmit()" >
+<form (submit)="onSubmit()" #commentForm="ngForm" novalidate>
   <div>
     <label for="name">Name</label>
-    <input type="text" name="name" [(ngModel)]="name" />
+    <input type="text" name="name" [(ngModel)]="name" 
+    required minlength="3" maxlength="12" #nameField="ngModel"
+    [ngStyle]="{'outline-color': nameField.dirty && nameField.valid ? 'green' : undefined}"/>
+    <div class="alert alert-danger" *ngIf="(commentForm.submitted || nameField.touched && nameField.errors)">
+      <div [hidden]="!nameField.errors.required">Name is required dawg!</div>
+      <div [hidden]="!nameField.errors.minlength">You need at least 3 characters dawg!</div>
+      <div [hidden]="!nameField.errors.maxlength">No more than 12 characters dawg!</div>
+    </div>
   </div>
   <div>
     <label for="comment">Comment</label>
-    <textarea name="comment" [(ngModel)]="comment"></textarea>
+    <textarea name="comment" [(ngModel)]="comment" 
+    required minlength="3" #commentField="ngModel"
+    [ngStyle]="{'outline-color': commentField.dirty && commentField.valid ? 'green' : undefined}"></textarea>
+    <div class="alert alert-danger" *ngIf="(commentForm.submitted || commentField.touched && commentField.errors)">
+      <div [hidden]="!commentField.errors.required">Comment is required dawg!</div>
+      <div [hidden]="!commentField.errors.minlength">You need at least 3 characters dawg!</div>
+    </div>
   </div>
   <div>
     <button>Submit</button>
